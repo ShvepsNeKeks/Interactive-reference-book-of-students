@@ -7,14 +7,6 @@ let student1 = new Student(1, 'Дима', ['Химия', 'Физика', 'Рус
 let student2 = new Student(2, 'Лианна', ['Химия', 'Физика', 'Обществоезнание']);
 let student3 = new Student(3, 'Степан', ['Химия', 'Физика', 'Обществоезнание', 'Биология']);
 
-student1.addUniqueSubjects();
-student2.addUniqueSubjects();
-student3.addUniqueSubjects();
-
-student1.addMap();
-student2.addMap();
-student3.addMap();
-
 // findStudent(3);
 console.log(studentData);
 console.log(uniqueSubjects);
@@ -47,8 +39,8 @@ function Student(id, name, subjects) {
   this.id = id;
   this.name = name;
   this.subjects = subjects;
-  this.addMap = () => studentData.set(this.id, this);
-  this.addUniqueSubjects = () => this.subjects.forEach(elem => {
+  studentData.set(this.id, this);
+  this.subjects.forEach(elem => {
     uniqueSubjects.add(elem)
   });
 }
